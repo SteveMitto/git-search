@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GitComponent implements OnInit {
 
+  sendName(search){
+    console.log(search)
+  }
   constructor() { }
 
   ngOnInit() {
