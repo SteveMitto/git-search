@@ -19,6 +19,7 @@ import { GitSearchComponent } from './git-search/git-search.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
