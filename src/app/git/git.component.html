@@ -1,3 +1,12 @@
 <div class="container">
   <app-git-search (findAccount)=sendName($event)></app-git-search>
 </div>
+   <h3>Account</h3>
+   <div class="container" >
+     <ul>
+       <li>{{users.name}}</li>
+       <a href="#">{{users.followers}}</a>
+        <img src="{{users.avatarUrl}}" alt="">
+     </ul>
+
+   </div>
