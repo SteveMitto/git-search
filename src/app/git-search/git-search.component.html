@@ -1,1 +1,6 @@
-<p>git-search works!</p>
+
+<form >
+  <input type="text" class="form-control" name="search" [(ngModel)]='search' placeholder="Search Github Account">
+  {{search}}
+  <button type="submit" class="btn btn-primary" (click)='sendName()' mmit name="button">Search</button>
+</form>

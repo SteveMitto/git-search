@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-git-search',
@@ -6,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./git-search.component.css']
 })
 export class GitSearchComponent implements OnInit {
+  search:string;
 
+  @Output() findAccount = new EventEmitter<any>();
+
+    sendName(){
+      this.findAccount.emit(this.search)
+      
+    }
   constructor() { }
 
   ngOnInit() {
