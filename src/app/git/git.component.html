@@ -3,10 +3,17 @@
 </div>
    <h3>Account</h3>
    <div class="container" >
-     <ul>
-       <li>{{users.name}}</li>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="{{users.avatarUrl}}" alt="" class="img">
+      </div>
+      <div class="col-md-8">
+        <h3>Username {{users.name}}</h3>
+        <hr>
+        <span  class="follow-d">Followers {{users.followers}}</span> <span class="follow-d">Following{{users.following}}</span>
+        <!-- <button type="button" name="button" >Repos</button> -->
+      </div>
+    </div>
        <a href="#">{{users.followers}}</a>
-        <img src="{{users.avatarUrl}}" alt="">
-     </ul>
 
    </div>

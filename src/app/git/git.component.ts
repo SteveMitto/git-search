@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountHttpService } from '../service/account-http.service';
 import { Account} from '../account';
+import { Repository } from '../repository'
 @Component({
   selector: 'app-git',
   templateUrl: './git.component.html',
@@ -8,8 +9,10 @@ import { Account} from '../account';
 })
 export class GitComponent implements OnInit {
   users:Account;
+  user
   constructor(private accountService:AccountHttpService) { }
   // console.log(user)
+
 
   sendName(search){
     this.accountService.searchName(search).then(
@@ -20,9 +23,11 @@ export class GitComponent implements OnInit {
       (error)=>{
         console.log('error')
       }
-    )
+    );
   }
+
   ngOnInit() {
+    this.sendName("SteveMitto")
   }
 
 }
