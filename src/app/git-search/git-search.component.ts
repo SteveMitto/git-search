@@ -9,10 +9,12 @@ export class GitSearchComponent implements OnInit {
   search:string;
 
   @Output() findAccount = new EventEmitter<any>();
-
+  @Output () repoRes = new EventEmitter<any>();
     sendName(){
       this.findAccount.emit(this.search)
-      
+    }
+    getRepo(){
+      this.repoRes.emit(this.search)
     }
   constructor() { }
 
