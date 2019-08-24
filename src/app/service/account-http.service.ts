@@ -25,7 +25,7 @@ export class AccountHttpService {
       this.http.get<ApiResponse>(apiUrl).toPromise().then(
         (results) => {
           this.user = new Account(results.login, results.avatar_url, results.public_repos, results.repos_url, results.followers, results.following)
-          console.log(this.user)
+          // console.log(this.user)
 
           resolve()
         },
