@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GitComponent } from './git/git.component';
 import { GitSearchComponent } from './git-search/git-search.component';
+import { RepoUrlComponent } from './repo-url/repo-url.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     GitComponent,
-    GitSearchComponent
+    GitSearchComponent,
+    RepoUrlComponent
   ],
   imports: [
     BrowserModule,
