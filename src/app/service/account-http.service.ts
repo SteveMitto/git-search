@@ -20,7 +20,7 @@ export class AccountHttpService {
       following: string;
       html_url:string;
     }
-    let apiUrl = "https:api.github.com/users/" + search + "?access_token=" + environment.APIKEY;
+    let apiUrl = "https:api.github.com/users/" + search + "?access_token=791be29779bf4a2cdbf5d1e086899bdf760b748b"
 
     let promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(apiUrl).toPromise().then(
