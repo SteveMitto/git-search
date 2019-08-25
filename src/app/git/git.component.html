@@ -1,5 +1,5 @@
 <div class="container">
-  <app-git-search (findAccount)=sendName($event) (repoRes)=getRepository($event)></app-git-search>
+  <app-git-search (findAccount)=sendName($event) (name)=getLink($event) (repoRes)=getRepository($event)></app-git-search>
 </div>
    <h3>Account</h3>
    <div class="container" >
@@ -15,7 +15,27 @@
       </div>
     </div>
        <a href="#">{{users.followers}}</a>
-    <ul *ngFor='let repo of repos'>
-      <li>{{repo}}</li>
-    </ul>
+    <!-- <div *ngFor='let repo of repos'>
+      <small>{{repo}} <br> This is the link {{repou}}</small>
+    </div> -->
+
+   <div class="container">
+     <table class="table table-striped" *ngIf="repos">
+       <thead>
+         <tr>
+           <th>Repossitory</th>
+           <th> Link to repo</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td >
+              <small *ngFor='let repo of repos'>{{repo}}<br><br></small>
+           </td> <br>
+           <td>
+              <small *ngFor='let repo_u of repos_url'>{{repo_u}}<br><br></small>
+           </td>
+         </tr>
+       </tbody>
+     </table>
    </div>

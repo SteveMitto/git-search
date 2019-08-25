@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountHttpService } from '../service/account-http.service';
 import { RepositoryHttpService } from '../service/repository-http.service';
+import { FinalRepoUrlService } from '../service/final-repo-url.service';
+import { FinalRepoUrl } from '../final-repo-url';
 import { Account} from '../account';
 import { Repository } from '../repository'
 import { RepoUrl } from '../repo-url'
@@ -14,10 +16,22 @@ export class GitComponent implements OnInit {
   users:Account;
   repos:Repository[]=[];
   repos_url:RepoUrl[]=[];
-
-  constructor(private accountService:AccountHttpService,private repoService:RepositoryHttpService) { }
+  repoLink:FinalRepoUrl[]=[];
+  constructor(private accountService:AccountHttpService,private repoService:RepositoryHttpService ,private repLink:FinalRepoUrlService) { }
   // console.log(user)
 
+
+  getLink(username){
+    this.repLink.getLink(username).then(
+      (results)=>{
+        this.repoLink = this.repLink.repoLink
+        console.log(this.repoLink)
+      },
+      (error)=>{
+        console.log(error)
+      }
+    )
+  }
 
   getRepository(search){
     this.repoService.getRepository(search).then(
@@ -25,6 +39,7 @@ export class GitComponent implements OnInit {
         this.repos = this.repoService.repos
         this.repos_url = this.repoService.repos_url
         console.log(this.repos_url)
+      // this.getLink(search)
       },
       (error)=>{
         console.log("could not fetch repo");
