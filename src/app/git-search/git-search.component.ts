@@ -11,6 +11,7 @@ export class GitSearchComponent implements OnInit {
   @Output() findAccount = new EventEmitter<any>();
   @Output() repoRes = new EventEmitter<any>();
   @Output() name = new EventEmitter<any>();
+
   getLink(){
     this.name.emit(this.search)
   }

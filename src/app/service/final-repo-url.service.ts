@@ -21,10 +21,11 @@ repoLink:FinalRepoUrl[]=[];
             console.log(results[i]["html_url"]);
           }
           // console.log(results);
-          (resolve)
+          resolve()
         },
         (error)=>{
           console.log('error');
+          reject()
         })
     })
     return promise;
