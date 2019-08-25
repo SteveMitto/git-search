@@ -18,13 +18,14 @@ export class AccountHttpService {
       repos_url: string;
       followers: string;
       following: string;
+      html_url:string;
     }
     let apiUrl = "https:api.github.com/users/" + search + "?access_token=" + environment.APIKEY;
 
     let promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>(apiUrl).toPromise().then(
         (results) => {
-          this.user = new Account(results.login, results.avatar_url, results.public_repos, results.repos_url, results.followers, results.following)
+          this.user = new Account(results.login, results.avatar_url, results.public_repos, results.repos_url, results.followers, results.following,results.html_url)
           // console.log(this.user)
 
           resolve()

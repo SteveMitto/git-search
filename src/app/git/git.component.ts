@@ -63,6 +63,7 @@ export class GitComponent implements OnInit {
   ngOnInit() {
     this.sendName("SteveMitto")
     this.getRepository("SteveMitto")
+    this.getLink("SteveMitto")
     // console.log(users)
     // console.log(repos)
 
