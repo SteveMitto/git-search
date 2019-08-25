@@ -2,3 +2,75 @@
   border-radius: 50%;
   width: 200px;
 }
+.main{
+  height:500px;
+  background-image: url('../../assets/man.jpg');
+  background-size: cover;
+  padding: 0;
+
+}
+.overlay{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(0,0,0,.9)
+}
+.img-l{
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:rgb(255, 255, 255);
+  width: 140px;
+  border-radius: 50%;
+  padding:0 0px 4px .5px;
+}
+.overlay small{
+  font-size: 1.5em;
+  text-align: center;
+  margin: 10px;
+  color: white;
+  font-style: italic;
+}
+.data{
+  margin-top: 30px;
+}
+.data h3{
+  margin: 20px;
+  text-align: center;
+  display: table;
+  font-style:italic;
+  /* color:rgb(52, 152, 219); */
+  /* white-space: nowrap; */
+}
+
+.data h3::before{
+    border-top: 2px solid rgb(52, 152, 219);
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.5em;
+    right: 1.5%;
+    width: 45%;
+}
+.data h3::after{
+    border-top: 2px solid rgb(52, 152, 219);
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.5em;
+    left: 1.5%;
+    width: 45%;
+}
+.data{
+
+}
+.follow-d{
+  margin: 20px;
+}
+.image{
+  height: 200px;
+  width: 200px;
+}
