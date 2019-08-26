@@ -4,8 +4,10 @@ import { GitComponent } from './git/git.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
+  {path:'home' , component:GitComponent},
+  {path:'' ,redirectTo:'/home', pathMatch:'full'},
+
   {path:'**' ,component:NotFoundComponent},
-  {path:'' , component:GitComponent}
 ];
 
 @NgModule({
