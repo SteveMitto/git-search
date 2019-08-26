@@ -17,10 +17,13 @@ export class GitComponent implements OnInit {
   repos:Repository[]=[];
   repos_url:RepoUrl[]=[];
   repoLink:FinalRepoUrl[]=[];
+  showRepo:boolean= true;
   constructor(private accountService:AccountHttpService,private repoService:RepositoryHttpService ,private repLink:FinalRepoUrlService) { }
   // console.log(user)
 
-
+  displayRepo(){
+    this.showRepo == !this.showRepo
+  }
   getLink(username){
     this.repLink.getLink(username).then(
       (results)=>{
