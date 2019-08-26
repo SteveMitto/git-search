@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FinalRepoUrl } from '../final-repo-url'
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +12,7 @@ repoLink:FinalRepoUrl[]=[];
   constructor(private http:HttpClient) { }
 
   getLink(username){
-    let repoLink = "https://api.github.com/users/"+username+"/repos?access_token=791be29779bf4a2cdbf5d1e086899bdf760b748b"
+    let repoLink = "https://api.github.com/users/"+username+"/repos?access_token="+environment.APIKEY
     let promise = new Promise((resolve,reject)=>{
       this.http.get<[]>(repoLink).toPromise().then(
         (results)=>{
