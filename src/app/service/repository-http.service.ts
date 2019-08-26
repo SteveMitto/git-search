@@ -23,12 +23,9 @@ export class RepositoryHttpService {
           this.repos = [];
           this.repos_url = [];
             for (let i = 0; i < results.length; i++) {
-              // console.log(results)
               this.repos.push(results[i]["name"])
               this.repos_url.push(results[i]["url"])
             }
-          // console.log(this.repos)
-          // console.log(this.repos_url)
           resolve()
         },
         (error) => {

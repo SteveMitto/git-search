@@ -20,7 +20,6 @@ export class GitComponent implements OnInit {
   result:boolean= false;
   value:string;
   constructor(private accountService:AccountHttpService,private repoService:RepositoryHttpService ,private repLink:FinalRepoUrlService) { }
-  // console.log(user)
 
   displayRepo(){
     this.result = !this.result
@@ -30,7 +29,6 @@ export class GitComponent implements OnInit {
     this.repLink.getLink(username).then(
       (results)=>{
         this.repoLink = this.repLink.repoLink
-        console.log(this.repoLink)
       },
       (error)=>{
         console.log(error)
@@ -43,8 +41,6 @@ export class GitComponent implements OnInit {
       (results)=>{
         this.repos = this.repoService.repos
         this.repos_url = this.repoService.repos_url
-        console.log(this.repos_url)
-      // this.getLink(search)
       },
       (error)=>{
         console.log("could not fetch repo");
@@ -56,8 +52,6 @@ export class GitComponent implements OnInit {
     this.accountService.searchName(search).then(
       (results)=>{
       this.users= this.accountService.user
-      // this.getRepository(this.users.name)
-      console.log(this.users)
       },
       (error)=>{
         console.log('error')
@@ -69,8 +63,6 @@ export class GitComponent implements OnInit {
     this.sendName("SteveMitto")
     this.getRepository("SteveMitto")
     this.getLink("SteveMitto")
-    // console.log(users)
-    // console.log(repos)
 
   }
 

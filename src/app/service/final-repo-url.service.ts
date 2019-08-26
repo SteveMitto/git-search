@@ -17,12 +17,9 @@ repoLink:FinalRepoUrl[]=[];
       this.http.get<[]>(repoLink).toPromise().then(
         (results)=>{
           this.repoLink=[];
-          // console.log(results.length);
           for(let i = 0;i<results.length;i++){
             this.repoLink.push(results[i]["html_url"]);
-            console.log(results[i]["html_url"]);
           }
-          // console.log(results);
           resolve()
         },
         (error)=>{
