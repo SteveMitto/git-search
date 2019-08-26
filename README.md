@@ -1,11 +1,22 @@
-# Git
+# Project
+Git search
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+## Description
+This website allows you to get details of your github account without visiting githb
 
-## Development server
+## Languages Used
+To develope this site i used Typescript, Html ,CSS
+
+## Setup and installation
+clone this project then type in the terminal or command prompt `git clone https://github.com/SteveMitto/git-search` then `cd git-search`. Then open it up on your texteditor `atom .` || `code .`
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Link to live deployment
+To view this project on the website open this link https://stevemitto.github.io/git-search/home
+
+## Contacts
+To contact me, find me @ mittosteve@gmail.com
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
