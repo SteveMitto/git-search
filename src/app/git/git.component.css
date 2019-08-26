@@ -77,3 +77,14 @@
 .btn{
   margin:5px;
 }
+li{
+  height: 48px;
+  list-style: none;
+}
+.row{
+  display: flex;
+  justify-content: center;
+}
+h5{
+  text-align: center;
+}

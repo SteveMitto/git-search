@@ -2,7 +2,7 @@
     <div class="overlay">
 
     <div class="img-l">
-      <img src="../../assets/github.png" width="150px" alt="">
+      <img src="assets/github.png" width="150px" alt="">
     </div>
     <small>Enter Your name to get account details</small>
   <app-git-search (findAccount)=sendName($event) (name)=getLink($event) (repoRes)=getRepository($event)></app-git-search>
@@ -18,8 +18,10 @@
       <div class="col-md-8 users">
         <h4>{{users.name}}</h4>
         <hr>
-        <small  class="follow-d"> <img src="../../assets/followers.png" width="20px" alt="">{{users.followers}} Followers</small>
-         <small class="follow-d"> <img src="../../assets/following.png" width="20px" alt="">{{users.following}} Following</small>
+        <small  class="follow-d"> <img src="assets/followers.png" width="20px" alt="">{{users.followers}} Followers</small>
+         <small class="follow-d"> <img src="assets/following.png" width="20px" alt="">{{users.following}} Following</small>
+         <small class="follow-d"> <img src="assets/repo.jpg" width="20px" alt=""> {{users.public_repos}} Repositories</small>
+
         <!-- <button type="button" name="button" >Repos</button> --><br><br>
         <a href={{users.html_url}} class="btn btn-primary btn-sm" target="_blank">View on GitHub</a>
          <button type="button" class="btn btn-outline-primary btn-sm" (click)='displayRepo()'>See Repositories</button>
@@ -27,49 +29,23 @@
     </div>
 
 <br><br>
-    <!-- <div *ngFor='let repo of repos'>
-      <small>{{repo}} <br> This is the link {{repou}}</small>
-    </div> -->
-<!--
-   <div class="container">
-     <table class="table table-striped" *ngIf="repos">
-       <thead>
-         <tr>
-           <th>Repossitory</th>
-           <th> Link to repo</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td >
-              <small *ngFor='let repo of repos'>{{repo}}<br><br></small>
-           </td> <br>
-           <td >
-             <span *ngFor='let repo_u of repoLink'> -->
 
-              <!-- <button class="btn btn-primary" *ngFor='let repo_u of repoLink'><a href="{{repo_u}}"></a>See repository<br><br></button>
-               <a  href="{{repo_u}}" class="btn btn-primary btn-sm" target="_blank" >See Rep </a>
-              <br><br>
-              </span>
-           </td>
-         </tr>
-       </tbody>
-     </table>
-   </div> -->
-<div class="container" >
-  <h3>Hello</h3>
+<div class="container" *ngIf="result">
+
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-5">
         <ul>
+          <h5>Repositories</h5>
           <li *ngFor='let repo of repos' >
             {{repo}}<br><br>
           </li>
         </ul>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-5">
+        <h5> View on Git Hub</h5>
         <ul>
           <li *ngFor='let repo_u of repoLink'>
-              <a  href="{{repo_u}}" class="btn btn-primary btn-sm" target="_blank" >See Rep </a><br><br>
+              <a  href="{{repo_u}}" class="btn btn-primary btn-sm" target="_blank" >See Repository </a><br><br>
           </li>
         </ul>
       </div>
