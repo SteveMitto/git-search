@@ -10,7 +10,7 @@ repoLink:FinalRepoUrl[]=[];
   constructor(private http:HttpClient) { }
 
   getLink(username){
-    let repoLink = "https://api.github.com/users/"+username+"/repos"
+    let repoLink = "https://api.github.com/users/"+username+"/repos?access_token=791be29779bf4a2cdbf5d1e086899bdf760b748b"
     let promise = new Promise((resolve,reject)=>{
       this.http.get<[]>(repoLink).toPromise().then(
         (results)=>{
